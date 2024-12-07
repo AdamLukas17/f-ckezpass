@@ -3,8 +3,14 @@
     "name": "My Extension",
     "version": "1.0",
     "description": "A basic Chrome extension",
-    "permissions": ["activeTab", "storage"],
+    "permissions": ["activeTab", "storage", "tabs"],
     "action": {
       "default_popup": "src/popup/popup.html"
-    }
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://www.e-zpassny.com/vector/account/home/accountLogin.do?locale=en_US&from=Home"],
+        "js": ["src/content.js"]
+      }
+    ]
   }
